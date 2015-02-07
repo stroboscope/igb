@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+#DEBHELPER#
+
+case "$1" in
+configure|upgrade)
+    depmod -a
+    update-initramfs -k all -u
+;;
+esac
+

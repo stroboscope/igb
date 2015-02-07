@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+case "$1" in
+purge|remove)
+    depmod -a
+    update-initramfs -k all -u
+;;
+esac
+

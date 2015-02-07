@@ -1,0 +1,10 @@
+igb for Debian
+--------------
+
+Please see README for a description of the igb software.
+
+ The Debian igb source package provides packages:
+
+ linux-modules-igb which provides the source for the kernel modules
+
+ -- Sergey Viuchny <sergey@de-bs.ru>  Thu, 25 Oct 2012 13:29:50 +0400

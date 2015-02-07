@@ -1,0 +1,12 @@
+
+--- a/igb.7
++++ b/igb.7
+@@ -4,7 +4,7 @@
+ .\"
+ .\" * Other names and brands may be claimed as the property of others.
+ .\"
+-.TH igb 1 "June 3, 2013"
++.TH igb 7 "June 3, 2013"
+ 
+ .SH NAME
+ igb \-This file describes the Linux* Base Driver for the Gigabit Family of Adapters.

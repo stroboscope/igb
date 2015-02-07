@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+kernel_version := 3.16.0-0.bpo.4
+kernel_version_arch := ${kernel_version}-${DEB_BUILD_ARCH}
+
+export BUILD_KERNEL=${kernel_version_arch}
+export CONFIG_FILE=/usr/src/linux-headers-$(kernel_version_arch)/include/generated/autoconf.h
+export INSTALL_MOD_PATH=../debian/linux-modules-igb-${kernel_version_arch}
+
+
+
+override_dh_auto_install:
+	mkdir -p debian/depmod.d
+	echo "override igb ${kernel_version}-${DEB_BUILD_ARCH} kernel/drivers/net/igb" \
+	 > debian/depmod.d/igb.conf
+	dh_auto_install
+
+%:
+	dh $@ -Dsrc
+
+override_dh_builddepends:
+	dh_builddepends -- -d \
+		"debhelper (>= 8.0.0), bzip2, \
+		linux-headers-${kernel_version}-all, \
+		linux-kbuild-3.16, linux-source-3.16"
+

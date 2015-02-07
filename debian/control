@@ -1,0 +1,20 @@
+Source: igb
+Section: kernel
+Priority: extra
+Maintainer: Sergey Viuchny <sergey@de-bs.ru>
+Build-Depends: debhelper (>= 8.0.0), linux-headers-3.16.0-0.bpo.4-all
+Standards-Version: 3.9.4
+Homepage: http://intel.com
+
+Package: linux-modules-igb-3.16.0-0.bpo.4-amd64
+Depends: ${misc:Depends}, linux-image-3.16.0-0.bpo.4-amd64
+Architecture: amd64
+Conflicts: linux-modules-igb (<5.2.9.4-1.1)
+Description: igb modules for Linux (kernel 3.16).
+ This package contains the set of loadable kernel modules for the
+ Intel ethernet controllers.
+ .
+ This package contains the compiled kernel modules for 3.16
+ .
+ If you have compiled your own kernel, you will most likely need to build
+ your own igb-modules. 
